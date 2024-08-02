@@ -26,28 +26,48 @@
                 <h1 class="text-3xl font-bold">Our Collections</h1>
                 <div class="flex flex-wrap space-y-3 md:space-y-0 justify-between items-center">
                     <div class="flex gap-4 items-center">
-                        <Button :text="text" />
-                        <Button :text="art" class="font-medium" style="background-color: #E8E9EA; color: black;" />
-                        <Button :text="celebrities" class="font-medium"
-                            style="background-color: #E8E9EA; color: black;" />
-                        <Button :text="gaming" class="hidden md:block font-medium"
-                            style="background-color: #E8E9EA; color: black;" />
-                        <Button :text="sport" class="hidden md:block font-medium"
-                            style="background-color: #E8E9EA; color: black;" />
+                        <div class="bg-gray-800 text-sm text-white rounded-lg px-4 py-1">
+                            <p>All Categories</p>
+                        </div>
+                        <div class="bg-gray-50 text-sm text-black rounded-lg px-4 py-1">
+                            <p>Art</p>
+                        </div>
+                        <div class="bg-gray-50 text-sm text-black rounded-lg px-4 py-1">
+                            <p>Celebrities</p>
+                        </div>
+                        <div class="bg-gray-50 text-sm text-black rounded-lg px-4 py-1 hidden md:block">
+                            <p>Gaming</p>
+                        </div>
+                        <div class="bg-gray-50 text-sm text-black rounded-lg px-4 py-1 hidden md:block">
+                            <p>Sport</p>
+                        </div>
                     </div>
                     <p>View More</p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 place-items-center gap-5 lg:grid-cols-4 p-4 sm:max-w-[40em] mx-auto lg:max-w-[65em] collections">
+            <div
+                class="grid grid-cols-2 place-items-center gap-5 lg:grid-cols-4 p-4 sm:max-w-[40em] mx-auto lg:max-w-[65em] collections">
                 <CollectionsCard v-for="(collection, index) in collections" :key="index" :collection="collection" />
             </div>
         </div>
 
         <div class="max-w-70 mx-auto space-y-8 p-8">
             <h1 class="text-3xl font-bold">Create and Sell Now</h1>
+
+            <!-- Afficher le carrousel uniquement sur les petits écrans -->
+            <div class="block sm:hidden gap-5">
+                <Carousel :value="cards" :numVisible="1" :numScroll="1" class="p-carousel w-[310px] mx-auto">
+                    <template v-slot:item="slotProps">
+                        <SellCard :card="slotProps.data" />
+                    </template>
+                </Carousel>
+            </div>
+
+
+            <!-- Afficher la grille uniquement sur les écrans moyens et grands -->
             <div
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center gap-5 p-4 sm:max-w-[40em] mx-auto lg:max-w-[65em]">
+                class="hidden sm:grid grid-cols-2 lg:grid-cols-4 place-items-center gap-5 p-4 sm:max-w-[40em] mx-auto lg:max-w-[65em]">
                 <SellCard v-for="(card, index) in cards" :key="index" :card="card" />
             </div>
         </div>
@@ -72,10 +92,16 @@
 </template>
 
 <script>
+import Carousel from 'primevue/carousel';
+import SellCard from '@/components/SellCard';
 export default {
+    components: {
+        Carousel,
+        SellCard,
+    },
     data() {
         return {
-            text: 'All Categories',
+            label: 'All Categories',
             art: 'Art',
             celebrities: 'Celebrities',
             gaming: 'Gaming',
@@ -124,10 +150,9 @@ export default {
                     subtitle: 'Sell your NFT’s',
                 },
             ],
-        }
+        };
     },
-
-}
+};
 </script>
 
 <style>

@@ -4,7 +4,7 @@
             <img :src="card.src" alt="Wallet Picture" class="w-6">
         </div>
         <div>
-            <h1 class="font-bold text-lg ">{{ card.subtitle }}</h1>
+            <h1 class="font-bold text-lg">{{ card.subtitle }}</h1>
             <p class="max-w-15 text-sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
                 aliquet odio mattis.
@@ -15,11 +15,9 @@
 
 <script>
 export default {
-
     props: {
         card: Object,
-    }
-
+    },
 }
 </script>
 
