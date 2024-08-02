@@ -17,8 +17,14 @@
                     <img src="/icons/discover_btn.svg" alt="Image pour le boutton en savoir plus" class="w-8">
                 </div>
             </div>
-            <img src="/images/hero_section.svg" alt="L'image de la heroSection"
-                class="w-28 md:w-25 lg:w-35 lg:mx-0 mx-auto">
+            <div class="max-w-[30em] mx-auto flex gap-2">
+                <div class="w-[20em]">
+                    <img src="/images/fame.svg" alt="" class="w-[8em] float-end">
+                    <img src="/images/machine.svg" alt="" class="w-[15em]">
+                </div>
+                <img src="/images/monkey.svg" alt="" class="w-[15em]">
+            </div>
+
         </div>
 
         <div class="max-w-70 mx-auto p-8">
@@ -57,7 +63,8 @@
 
             <!-- Afficher le carrousel uniquement sur les petits écrans -->
             <div class="block sm:hidden gap-5">
-                <Carousel :value="cards" :numVisible="1" :numScroll="1" class="p-carousel w-[310px] mx-auto">
+                <Carousel :value="cards" :numVisible="1" :numScroll="1"
+                    class="flex justify-center p-carousel w-[300px] mx-auto">
                     <template v-slot:item="slotProps">
                         <SellCard :card="slotProps.data" />
                     </template>
