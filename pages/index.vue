@@ -30,7 +30,7 @@
         <div class="max-w-70 mx-auto p-8">
             <div class="space-y-4 py-5 px-6">
                 <h1 class="text-3xl font-bold">Our Collections</h1>
-                <div class="flex flex-wrap space-y-3 md:space-y-0 justify-between items-center">
+                <div class="flex flex-wrap space-y-3 md:space-y-0 justify-between items-center overflow-x-auto ">
                     <div class="flex gap-4 items-center">
                         <div class="bg-gray-800 text-sm text-white rounded-lg px-4 py-1">
                             <p>All Categories</p>
@@ -41,10 +41,10 @@
                         <div class="bg-gray-50 text-sm text-black rounded-lg px-4 py-1">
                             <p>Celebrities</p>
                         </div>
-                        <div class="bg-gray-50 text-sm text-black rounded-lg px-4 py-1 hidden md:block">
+                        <div class="bg-gray-50 text-sm text-black rounded-lg px-4 py-1 hiddn md:block">
                             <p>Gaming</p>
                         </div>
-                        <div class="bg-gray-50 text-sm text-black rounded-lg px-4 py-1 hidden md:block">
+                        <div class="bg-gray-50 text-sm text-black rounded-lg px-4 py-1 hiddn md:block">
                             <p>Sport</p>
                         </div>
                     </div>
