@@ -1,8 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  buildModules: [
-    '@nuxtjs/tailwindcss',
-  ],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   postcss: {
@@ -13,7 +10,8 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-07-29',
   modules: [
-    '@primevue/nuxt-module'
+    '@primevue/nuxt-module',
+    '@nuxtjs/tailwindcss',
   ],
   primevue: {
     /* Configuration */
