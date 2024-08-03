@@ -6,12 +6,12 @@
         </div>
 
         <div @click="menuOpen" class="absolute lg:hidden right-6 top-4 cursor-pointer">
-            <img src="/icons/close_btn.png" alt="" v-if="open">
-            <img src="/icons/hamburger_menu.svg" alt="" v-else>
+            <img src="/icons/hamburger_menu.svg" alt="" v-if="!open" >
         </div>
 
-        <ul class="lg:flex lg:items-center lg:px-0 px-3 lg:pb-0 pb-8 top-14 lg:w-auto w-full lg:static absolute bg-gray-50
+        <ul class="lg:flex lg:items-center lg:px-0 px-3 lg:pb-0 pb-8 top-0 lg:w-auto w-full lg:static absolute h-full bg-gray-50
             duration-500 ease-in" :class="[open ? 'left-0' : 'left-[-100%]']">
+             <img src="/icons/close_btn.png" alt="" v-if="open" class="absolute top-4 right-6" @click="menuOpen">
             <li class="lg:mx-4 lg:my-0 my-6" v-for="(link, index) in Links" :key="index">
                 <NuxtLink to="">
                     {{ link.name }}
@@ -19,7 +19,7 @@
             </li>
         </ul>
 
-        <div class="flex gap-4 items-center lg:static absolute top-[19em] duration-500 ease-in" :class="[open ? 'left-0' : 'left-[-100%]']">
+        <div class="flex gap-4 items-center lg:static absolute top-[17em] duration-500 ease-in" :class="[open ? 'left-0' : 'left-[-100%]']">
             <button class="border-gray-800 border-r-2 px-5 py-1">
                 Sign up
             </button>

@@ -1,6 +1,6 @@
 <template>
     <section class="font-raleway">
-        <div class="bg-gray-50">
+        <div class="">
             <Navbar />
         </div>
 
@@ -66,7 +66,7 @@
             <!-- Afficher le carrousel uniquement sur les petits écrans -->
             <div class="block sm:hidden gap-5">
                 <Carousel :value="cards" :numVisible="1" :numScroll="1"
-                    class="flex justify-center p-carousel w-[300px] mx-auto">
+                    class="flex justify-center p-carousel w-[275px] mx-auto">
                     <template v-slot:item="slotProps">
                         <SellCard :card="slotProps.data" />
                     </template>
