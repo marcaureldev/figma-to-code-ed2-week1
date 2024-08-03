@@ -17,13 +17,15 @@
                     <img src="/icons/discover_btn.svg" alt="Image pour le boutton en savoir plus" class="w-8">
                 </div>
             </div>
-            <div class="max-w-[30em] mx-auto flex gap-2">
-                <div class="w-[20em]">
+            <div class="max-w-[30em] hidden mx-auto lg:flex gap-2">
+                <div class="w-[12em]" data-aos="fade-up">
                     <img src="/images/fame.svg" alt="" class="w-[8em] float-end">
-                    <img src="/images/machine.svg" alt="" class="w-[15em]">
+                    <img src="/images/machine.svg" alt="" class="w-[11em]">
                 </div>
-                <img src="/images/monkey.svg" alt="" class="w-[15em]">
+                <img src="/images/monkey.svg" alt="" class="w-[11em]" data-aos="fade-down">
             </div>
+
+            <img src="/images/hero_section.svg" alt="" class="lg:hidden w-25 mx-auto lg:mx-0">
 
         </div>
 
@@ -101,6 +103,9 @@
 <script>
 import Carousel from 'primevue/carousel';
 import SellCard from '@/components/SellCard';
+import { onMounted } from 'vue';
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 export default {
     components: {
         Carousel,
@@ -158,6 +163,12 @@ export default {
                 },
             ],
         };
+    },
+
+    setup() {
+        onMounted(() => {
+            AOS.init();
+        });
     },
 };
 </script>
