@@ -9,9 +9,9 @@
             <img src="/icons/hamburger_menu.svg" alt="" v-if="!open" >
         </div>
 
-        <ul class="lg:flex lg:items-center lg:px-0 px-3 lg:pb-0 pb-8 top-0 lg:w-auto w-full lg:static absolute h-full bg-gray-50
+        <ul class="lg:flex lg:items-center lg:px-0 px-3 lg:pb-0 pb-8 top-0 lg:w-auto w-full lg:static absolute h-full bg-white
             duration-500 ease-in" :class="[open ? 'left-0' : 'left-[-100%]']">
-            <img src="/icons/close_btn.png" alt="" v-if="open" class="absolute top-4 right-6" @click="menuOpen">
+             <img src="/icons/close_btn.png" alt="" v-if="open" class="absolute top-4 right-6" @click="menuOpen">
             <li class="lg:mx-4 lg:my-0 my-6" v-for="(link, index) in Links" :key="index">
                 <NuxtLink to="">
                     {{ link.name }}
